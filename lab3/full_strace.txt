@@ -1,0 +1,67 @@
+execve("./parent", ["./parent"], 0x7ffcfcb8f690 /* 26 vars */) = 0
+brk(NULL)                               = 0x56370269c000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc248f9490) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f489b00b000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=21051, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 21051, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f489b005000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0I\17\357\204\3$\f\221\2039x\324\224\323\236S"..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f489addc000
+mprotect(0x7f489ae04000, 2023424, PROT_NONE) = 0
+mmap(0x7f489ae04000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f489ae04000
+mmap(0x7f489af99000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f489af99000
+mmap(0x7f489aff2000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 0x7f489aff2000
+mmap(0x7f489aff8000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f489aff8000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f489add9000
+arch_prctl(ARCH_SET_FS, 0x7f489add9740) = 0
+set_tid_address(0x7f489add9a10)         = 9821
+set_robust_list(0x7f489add9a20, 24)     = 0
+rseq(0x7f489adda0e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f489aff2000, 16384, PROT_READ) = 0
+mprotect(0x5636cb88c000, 4096, PROT_READ) = 0
+mprotect(0x7f489b045000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7f489b005000, 21051)           = 0
+rt_sigaction(SIGUSR1, {sa_handler=0x5636cb88a309, sa_mask=[USR1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f489ae1e520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGUSR2, {sa_handler=0x5636cb88a321, sa_mask=[USR2], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f489ae1e520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+openat(AT_FDCWD, "/dev/shm/shared_memory", O_RDWR|O_CREAT|O_NOFOLLOW|O_CLOEXEC, 0666) = 3
+ftruncate(3, 1024)                      = 0
+mmap(NULL, 1024, PROT_READ|PROT_WRITE, MAP_SHARED, 3, 0) = 0x7f489b044000
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f489add9a10) = 9822
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f489add9a10) = 9823
+newfstatat(1, "", {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x6), ...}, AT_EMPTY_PATH) = 0
+getrandom("\x0c\x41\x81\x29\x4b\xda\xb8\xbe", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x56370269c000
+brk(0x5637026bd000)                     = 0x5637026bd000
+newfstatat(0, "", {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x6), ...}, AT_EMPTY_PATH) = 0
+write(1, "Enter the line (or 0 to end the "..., 42) = 42
+read(0, "hello   world\n", 1024)        = 14
+kill(9822, SIGUSR1)                     = 0
+--- SIGUSR1 {si_signo=SIGUSR1, si_code=SI_USER, si_pid=9822, si_uid=0} ---
+rt_sigreturn({mask=[]})                 = 0
+kill(9823, SIGUSR2)                     = 0
+--- SIGUSR2 {si_signo=SIGUSR2, si_code=SI_USER, si_pid=9823, si_uid=0} ---
+rt_sigreturn({mask=[]})                 = 0
+write(1, "Result: HELLO WORLD\n", 20)   = 20
+write(1, "\n", 1)                       = 1
+write(1, "Enter the line (or 0 to end the "..., 42) = 42
+read(0, "0\n", 1024)                    = 2
+kill(9822, SIGINT)                      = 0
+kill(9823, SIGINT)                      = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=9822, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=9823, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+wait4(9822, NULL, 0, NULL)              = 9822
+wait4(9823, NULL, 0, NULL)              = 9823
+munmap(0x7f489b044000, 1024)            = 0
+unlink("/dev/shm/shared_memory")        = 0
+exit_group(0)                           = ?
++++ exited with 0 +++

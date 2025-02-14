@@ -1,0 +1,19 @@
+# Компилятор и флаги
+CXX = g++
+CXXFLAGS = -fsanitize=address -w
+LDFLAGS = -lzmq
+
+# Цели
+all: server main
+
+# Компиляция server
+server: server.cpp
+	$(CXX) $(CXXFLAGS) server.cpp $(LDFLAGS) -o server
+
+main: main.cpp
+	$(CXX) -std=c++11 -pthread $(CXXFLAGS) main.cpp $(LDFLAGS) -o main
+
+clean:
+	rm -f server main
+
+
